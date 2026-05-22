@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petergao-cli"
+version = "0.1.0"
+description = "CLI and terminal browser for HKUST past papers on petergao.cc"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pypdf>=5.1.0",
+    "requests>=2.31.0",
+    "textual>=6.1.0",
+]
+
+[project.scripts]
+petergao = "petergao.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
